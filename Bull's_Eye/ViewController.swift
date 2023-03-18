@@ -31,11 +31,7 @@ class ViewController: UIViewController {
         let diffrence = abs(currentValue - targetValue)
         var points = 100 - diffrence
         score += points
-        scoreLabel.text = String(score)
-        
-        round += 1
-        roundLabel.text = String(round)
-        
+                
         let title: String
         if diffrence == 0 {
             title = "Perfect!"
@@ -52,13 +48,15 @@ class ViewController: UIViewController {
         
         let popUpController = UIAlertController(title: title, message: "You scored \(points)!", preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "OK", style: .default)
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        
+        let okAction = UIAlertAction(title: "OK", style: .default,handler: {_ in self.newRound()})
+
         popUpController.addAction(okAction)
-        popUpController.addAction(cancelAction)
         present(popUpController, animated: true, completion: nil)
+    }
+    
+    @IBAction func resetButton(){
+        score = 0
+        round = 0
         newRound()
     }
     
@@ -67,16 +65,39 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let roundedValue = sliderPosition.value.rounded()
         currentValue = Int(roundedValue)
-        targetValue = Int.random(in: 1...100)
+        resetButton()
         newRound()
+        
+        let thumbImageNormal = UIImage(named: "SliderThumb-Normal")!
+        sliderPosition.setThumbImage( thumbImageNormal, for: .normal)
+        
+        let thumbImageHighlighted = UIImage(named: "SliderThumb-Highlighted")!
+        sliderPosition.setThumbImage( thumbImageHighlighted, for: .highlighted)
+        
+        let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+        
+        let trackLeftImage = UIImage(named: "SliderTrackLeft")!
+        let trackLeftResizeable = trackLeftImage.resizableImage(withCapInsets: insets)
+        sliderPosition.setMinimumTrackImage(trackLeftResizeable, for: .normal)
+        
+        let trackRightImage = UIImage(named: "SliderTrackRight")!
+        let trackRightResizeable = trackRightImage.resizableImage(withCapInsets: insets)
+        sliderPosition.setMaximumTrackImage(trackRightResizeable, for: .normal)
         // Do any additional setup after loading the view.
     }
     
     func newRound(){
+        round += 1
         currentValue = 50
         targetValue = Int.random(in: 1...100)
-        targetLabel.text = "\(targetValue)"
         sliderPosition.value = Float(currentValue)
+        updateLabel()
+    }
+    
+    func updateLabel(){
+        targetLabel.text = String(targetValue)
+        roundLabel.text = String(round)
+        scoreLabel.text = String(score)
     }
 
 

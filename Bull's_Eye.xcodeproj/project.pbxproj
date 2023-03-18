@@ -16,6 +16,7 @@
 		D4BDCD1F29C5C25400136766 /* Bull_s_EyeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BDCD1E29C5C25400136766 /* Bull_s_EyeTests.swift */; };
 		D4BDCD2929C5C25400136766 /* Bull_s_EyeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BDCD2829C5C25400136766 /* Bull_s_EyeUITests.swift */; };
 		D4BDCD2B29C5C25400136766 /* Bull_s_EyeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BDCD2A29C5C25400136766 /* Bull_s_EyeUITestsLaunchTests.swift */; };
+		D4BDCD3829C613A800136766 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BDCD3729C613A800136766 /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D4BDCD2429C5C25400136766 /* Bull's_EyeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bull's_EyeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4BDCD2829C5C25400136766 /* Bull_s_EyeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bull_s_EyeUITests.swift; sourceTree = "<group>"; };
 		D4BDCD2A29C5C25400136766 /* Bull_s_EyeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bull_s_EyeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D4BDCD3729C613A800136766 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				D4BDCD1029C5C25400136766 /* Assets.xcassets */,
 				D4BDCD1229C5C25400136766 /* LaunchScreen.storyboard */,
 				D4BDCD1529C5C25400136766 /* Info.plist */,
+				D4BDCD3729C613A800136766 /* AboutViewController.swift */,
 			);
 			path = "Bull's_Eye";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				D4BDCD0C29C5C25300136766 /* ViewController.swift in Sources */,
 				D4BDCD0829C5C25300136766 /* AppDelegate.swift in Sources */,
+				D4BDCD3829C613A800136766 /* AboutViewController.swift in Sources */,
 				D4BDCD0A29C5C25300136766 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
